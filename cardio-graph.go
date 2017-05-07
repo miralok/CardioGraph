@@ -130,10 +130,10 @@ func (cc *CardioGraphChaincode) Query(stub shim.ChaincodeStubInterface, function
 
 		return formatOutput(cgArr)
 	}else
-	if function == "getAllCardioGraphByName" {
+	if function == "getCardioGraphByPatientID" {
 		var cgArr []CardioGraph
 
-		cgArr, err = getAllCardioGraphByAge(stub, args)
+		cgArr, err = getCardioGraphByPatientID(stub, args)
 
 		if err != nil {
 			return nil, err
